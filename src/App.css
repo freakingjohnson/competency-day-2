@@ -22,7 +22,19 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+input:disabled {
+  background: #ccc;
+}
+
+input:focus{
+  background: yellow;
+  color: red;
+}
+:nth-child(4n) {
+  color: purple;
+}
+@media screen and (max-width: 480px) {
+  .App{
+    background: green;
+  }
 }

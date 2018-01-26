@@ -128,12 +128,14 @@ class App extends Component {
         </header>
         <Link to='/funccomp'>link to a functional component</Link>
         <br />
+        <input disabled value="disabled input"/>
+        <br/>
         <input onChange={this.handleChange} />
         <br />
         <FuncCompWithProps name={this.state.name} />
         <br />
         <p>type below and hit send for stuff</p>
-        <input onChange={this.handleText} value={this.state.text} />
+        <input className="input" onChange={this.handleText} value={this.state.text} />
         <button onClick={this.handlePost}>send</button>
         <br />
         <p>type in the box below and hit edit on a item</p>
