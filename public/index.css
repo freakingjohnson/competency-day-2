@@ -14,6 +14,10 @@ li+li {
     text-shadow: 4px -4px 0 black;
 }
 
+ol li {
+    color: green;
+}
+
 footer > audio{
     box-shadow: 10px 5px 5px blue;
 }
