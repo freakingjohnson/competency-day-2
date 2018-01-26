@@ -1,0 +1,1 @@
+update competency2 set body = $1 where id = $2;
