@@ -126,12 +126,13 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Link to='/funccomp'>functional comp</Link>
+        <Link to='/funccomp'>link to a functional component</Link>
         <br />
         <input onChange={this.handleChange} />
         <br />
         <FuncCompWithProps name={this.state.name} />
         <br />
+        <p>type below and hit send for stuff</p>
         <input onChange={this.handleText} value={this.state.text} />
         <button onClick={this.handlePost}>send</button>
         <br />
