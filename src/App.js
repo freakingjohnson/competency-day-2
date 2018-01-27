@@ -9,7 +9,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      name: 'brah',
+      name: 'type something here',
       bodyData: [],
       bodyId: '',
       text: '',
@@ -126,11 +126,11 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <Link to='/funccomp'>link to a functional component</Link>
+        <Link to={`/funccomp/${this.state.name}`}>link to a functional component</Link>
         <br />
         <input disabled value="disabled input"/>
         <br/>
-        <input onChange={this.handleChange} />
+        <input onChange={this.handleChange} value={this.state.name}/>
         <br />
         <FuncCompWithProps name={this.state.name} />
         <br />

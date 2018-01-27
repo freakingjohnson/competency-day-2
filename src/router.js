@@ -6,6 +6,6 @@ import funcComp from './comps/funcComp'
 export default (
     <Switch>
         <Route exact path="/" component={App}/>
-        <Route path="/funccomp" component={funcComp}/>
+        <Route path="/funccomp/:name" component={funcComp}/>
     </Switch>
 )
