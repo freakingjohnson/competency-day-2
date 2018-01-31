@@ -44,7 +44,7 @@ class App extends Component {
 
   handleDelete = (e) => {
     console.log(this.state.bodyId)
-    axios.delete('/api/deletebody/' + e.target.value).then((res) => {
+    axios.delete(`/api/deletebody/${e.target.value}`).then((res) => {
       console.log(res)
     }).catch((error) => {
       console.log(error)
@@ -67,15 +67,15 @@ class App extends Component {
   }
 
   handlePut = (e) => {
-    axios.put('/api/putbody', {
-      body: this.state.putText,
+    axios.put(`/api/putbody?body=${this.state.putText}`, {
       id: e.target.value,
-    }).then(function (res) {
-      console.log(res)
-    }).catch(function (error) {
-      console.log(error)
-      alert("error! try again")
+    }).then(res => {
+      console.log(res.data)
     })
+      .catch(function (error) {
+        console.log(error)
+        alert("error! try again")
+      })
     axios.get('/api/getbody')
       .then((res) => {
         this.setState({
@@ -128,9 +128,9 @@ class App extends Component {
         </header>
         <Link to={`/funccomp/${this.state.name}`}>link to a functional component</Link>
         <br />
-        <input disabled value="disabled input"/>
-        <br/>
-        <input onChange={this.handleChange} value={this.state.name}/>
+        <input disabled value="disabled input" />
+        <br />
+        <input onChange={this.handleChange} value={this.state.name} />
         <br />
         <FuncCompWithProps name={this.state.name} />
         <br />
@@ -140,7 +140,7 @@ class App extends Component {
         <br />
         <p>type in the box below and hit edit on a item</p>
         <input onChange={this.handlePutText} value={this.state.putText} />
-        <br/>
+        <br />
         {data && data.length > 0 ?
           <div>
             {getData}
