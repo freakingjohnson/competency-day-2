@@ -25,7 +25,7 @@ module.exports = {
     putBody: (req, res, next) => {
         const db = req.app.get('db')
         console.log(req.query)
-        db.put_body([req.query.body, req.body.id])
+        db.put_body([req.query.body, req.query.id])
             .then(() => res.status(200).send())
             .catch((error) => {
                 console.log(error)

@@ -67,8 +67,8 @@ class App extends Component {
   }
 
   handlePut = (e) => {
-    axios.put(`/api/putbody?body=${this.state.putText}`, {
-      id: e.target.value,
+    axios.put(`/api/putbody?body=${this.state.putText}&id=${e.target.value}`, {
+        // id: e.target.value,
     }).then(res => {
       console.log(res.data)
     })
